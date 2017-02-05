@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侧边栏特效</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/demo.css">
+
+</head>
+<body>
+<section class="sec1">
+    <div class="div1">
+        <span class="span1">0</span>
+        Flash素材
+    </div>
+
+    <div class="div1">
+        <span class="span1">1</span>
+        Flash素材
+    </div>
+
+    <div class="div1">
+        <span class="span1">2</span>
+        Flash素材
+    </div>
+
+    <div class="div1">
+        <span class="span1">3</span>
+        Flash素材
+    </div>
+
+    <div class="div1">
+        <span class="span1">4</span>
+        Flash素材
+    </div>
+
+    <div class="div1">
+        <span class="span1">4</span>
+        Flash素材
+    </div>
+
+    <div class="div1">
+        <span class="span1">4</span>
+        Flash素材
+    </div>
+
+    <div class="div1">
+        <span class="span1">4</span>
+        Flash素材
+    </div>
+</section>
+</body>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
+<script>
+    //其实不用jquery也可以的，懒得去了。
+   var domSection =  document.querySelector('.sec1');
+   var timer = null;
+   var domChilds = domSection.children;
+    $('.sec1').on('mouseover.my.sidebar', function () {
+        [].forEach.call(domChilds,function (item, idx, array) {
+            timer = setTimeout(function () {
+                item.style.transform='translate(-250px)';
+
+            },100*idx)
+        });
+    }).on('mouseout.my.sidebar', function () {
+        [].forEach.call(domChilds,function (item, idx, array) {
+            setTimeout(function () {
+                item.style.transform='translate(0px)';
+            },100*idx)
+        });
+    });
+</script>
+</html>
